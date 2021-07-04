@@ -10,8 +10,6 @@ import 'package:dir_tree/dir_tree.dart';
 ```
 
 # Documentation
-## Limits
-
 Get a Directory Tree
 ```dart
 final files = await DirectoryTree.get(
