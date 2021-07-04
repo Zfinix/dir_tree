@@ -16,7 +16,6 @@ var constants = {
   FileSystemEntityType.file: 'file',
 };
 
-
 /// Gets Directory/Files as JSON Nodes
 class DirectoryTree {
   ///
