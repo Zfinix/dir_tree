@@ -8,4 +8,5 @@ environment:
 
 dependencies:
   test: ^1.17.3
-  path:
+  path: ^1.8.0
+  equatable: ^2.0.3

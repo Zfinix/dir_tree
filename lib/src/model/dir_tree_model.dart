@@ -1,8 +1,7 @@
 import 'dart:convert';
+import 'package:equatable/equatable.dart';
 
-import 'package:collection/collection.dart';
-
-class DirTreeModel {
+class DirTreeModel with EquatableMixin {
   final String path;
   final String name;
   final int size;
@@ -66,35 +65,22 @@ class DirTreeModel {
 
   String toJson() => json.encode(toMap());
 
-  factory DirTreeModel.fromJson(String source) =>
-      DirTreeModel.fromMap(json.decode(source));
+  factory DirTreeModel.fromJson(String source) => DirTreeModel.fromMap(
+        json.decode(source),
+      );
 
   @override
-  String toString() {
-    return 'DirTreeModel(path: $path, name: $name, size: $size, extension: $ext, type: $type, children: $children)';
-  }
+  bool get stringify => true;
 
   @override
-  int get hashCode {
-    return path.hashCode ^
-        name.hashCode ^
-        size.hashCode ^
-        ext.hashCode ^
-        type.hashCode ^
-        children.hashCode;
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    final listEquals = const DeepCollectionEquality().equals;
-
-    return other is DirTreeModel &&
-        other.path == path &&
-        other.name == name &&
-        other.size == size &&
-        other.ext == ext &&
-        other.type == type &&
-        listEquals(other.children, children);
+  List<Object> get props {
+    return [
+      path,
+      name,
+      size,
+      ext ?? '',
+      type,
+      children ?? [],
+    ];
   }
 }
