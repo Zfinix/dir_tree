@@ -1,0 +1,11 @@
+name: dir_tree
+description: A Dart library for creating a Dart object to represent directory trees.
+version: 1.0.0
+homepage: https://github.com/Zfinix/dir_tree
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  test: ^1.17.3
+  path:

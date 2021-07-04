@@ -1,0 +1,15 @@
+{
+  "path": "../lib/src/util",
+  "name": "util",
+  "size": 331,
+  "type": "directory",
+  "children": [
+    {
+      "path": "../lib/src/util/util.dart",
+      "name": "util.dart",
+      "size": 331,
+      "extension": ".dart",
+      "type": "file"
+    }
+  ]
+}
